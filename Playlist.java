@@ -1,31 +1,29 @@
 import java.util.Arrays;
 
-class Playlist {
+public class Playlist {
     private String[] songs;
-    private int songCount;
+    private int count;
 
-    public Playlist(int maxSize) {
-        songs = new String[maxSize];
-        songCount = 0;
+    public Playlist(int size) {
+        songs = new String[size];
+        count = 0;
     }
 
     public void addSong(String song) {
-        if (songCount < songs.length) {
-            songs[songCount] = song;
-            songCount++;
+        if (count < songs.length) {
+            songs[count] = song;
+            count++;
         }
     }
 
     public String[] getSongs() {
-        return Arrays.copyOf(songs, songCount);
+        return Arrays.copyOf(songs, count);
     }
 
     public int getSongCount() {
-        return songCount;
+        return count;
     }
-}
 
-public class Main {
     public static void main(String[] args) {
         Playlist p = new Playlist(10);
 
@@ -36,7 +34,7 @@ public class Main {
 
         copy[0] = "Hacked";
 
-        System.out.println(p.getSongs()[0]); // Song A
-        System.out.println(p.getSongCount()); // 2
+        System.out.println(p.getSongs()[0]);
+        System.out.println(p.getSongCount());
     }
 }

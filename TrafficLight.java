@@ -8,13 +8,12 @@ public class TrafficLight {
     }
 
     public void next() {
-        if (color.equals("RED")) {
+        if (color.equals("RED"))
             color = "GREEN";
-        } else if (color.equals("GREEN")) {
+        else if (color.equals("GREEN"))
             color = "YELLOW";
-        } else {
+        else
             color = "RED";
-        }
     }
 
     public String getColor() {
@@ -23,5 +22,20 @@ public class TrafficLight {
 
     public String getId() {
         return id;
+    }
+
+    public static void main(String[] args) {
+        TrafficLight t = new TrafficLight("TL-9");
+
+        System.out.println(t.getColor());
+
+        t.next();
+        System.out.println(t.getColor());
+
+        t.next();
+        System.out.println(t.getColor());
+
+        t.next();
+        System.out.println(t.getColor());
     }
 }
